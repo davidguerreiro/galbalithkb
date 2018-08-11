@@ -1,0 +1,1 @@
+<p>Yes the theme works as expected</p>
