@@ -5,6 +5,17 @@
  * @package design-document/inc
  */
 
+ /**
+ * PHP display all errors
+ * 
+ * @return void
+ */
+function dd_php_display_all_errors() {
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+}
+
 
 /**
  * Register CPT
@@ -122,3 +133,81 @@ function dd_register_cpt() {
     
 }
 add_action( 'init', 'dd_register_cpt' );
+
+
+/**
+ * Register taxonomies for CPTs
+ * 
+ * @return void
+ */
+function create_book_tax() {
+
+  // tipos de mecanicas.
+	register_taxonomy(
+		'tipos-mecanicas',
+		'mecanicas',
+		array(
+			'label' => __( 'Tipo de Mecánica' ),
+			'rewrite' => array( 'slug' => 'tipos-mecanicas' ),
+			'hierarchical' => true,
+		)
+  );
+
+  // tipos de personajes.
+	register_taxonomy(
+		'tipos-personajes',
+		'personajes',
+		array(
+			'label' => __( 'Tipo de Personaje' ),
+			'rewrite' => array( 'slug' => 'tipos-personajes' ),
+			'hierarchical' => true,
+		)
+  );
+
+  // regiones.
+	register_taxonomy(
+		'regiones',
+		'mundo',
+		array(
+			'label' => __( 'Region' ),
+			'rewrite' => array( 'slug' => 'regiones' ),
+			'hierarchical' => true,
+		)
+  );
+  
+  // tipos de mecanicas.
+	register_taxonomy(
+		'tipos-mecanicas',
+		'mecanicas',
+		array(
+			'label' => __( 'Tipo de Mecánica' ),
+			'rewrite' => array( 'slug' => 'tipos-mecanicas' ),
+			'hierarchical' => true,
+		)
+  );
+
+  // tipos de modulos.
+	register_taxonomy(
+		'tipos-modulo',
+		'modulos',
+		array(
+			'label' => __( 'Categoría de Módulo' ),
+			'rewrite' => array( 'slug' => 'tipos-modulos' ),
+			'hierarchical' => true,
+		)
+  );
+  
+  // tipos de mecanicas.
+	register_taxonomy(
+		'tipos-objetos',
+		'objetos',
+		array(
+			'label' => __( 'Tipo de Objeto' ),
+			'rewrite' => array( 'slug' => 'tipos-objetos' ),
+			'hierarchical' => true,
+		)
+  );
+
+}
+
+add_action( 'init', 'create_book_tax' );
