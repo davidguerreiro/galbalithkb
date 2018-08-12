@@ -113,7 +113,7 @@ function dd_register_cpt() {
      * juego.
      * 
      * Se pueden subdividir en :
-     * - Items
+     * - Items ( Consumibles )
      * - Equipamiento ( armas, armaduras, cascos, accesorios )
      * - Objetos clave
      */
