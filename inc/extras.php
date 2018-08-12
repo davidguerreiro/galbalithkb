@@ -126,6 +126,19 @@ function dd_register_cpt() {
       'supports'		  => array( 'title', 'editor', 'thumbnail' ),
     );
 
+    /**
+     * Glosario que engloba conceptos y definiciones varias
+     * relacionadas con el juego.
+     */
+    $cpts['glosario'] = array(
+      'public' 		    => true,
+      'has_archive' 	=> true,
+      'label'  		    => 'Glosario',
+      'menu_icon' 	  => 'dashicons-tag',
+      'menu_position' => 5,
+      'supports'		  => array( 'title', 'editor', 'thumbnail' ),
+    );
+
     foreach ( $cpts as $cpt_name => $data ) {
       register_post_type( $cpt_name, $data );
     }
@@ -171,6 +184,17 @@ function create_book_tax() {
 		array(
 			'label' => __( 'Region' ),
 			'rewrite' => array( 'slug' => 'regiones' ),
+			'hierarchical' => true,
+		)
+  );
+
+  // tipo de mapa
+  register_taxonomy(
+		'tipo-mapa',
+		'mundo',
+		array(
+			'label' => __( 'Tipo de Mapa' ),
+			'rewrite' => array( 'slug' => 'tipo-mapa' ),
 			'hierarchical' => true,
 		)
   );
