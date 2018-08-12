@@ -44,12 +44,12 @@ function dd_register_cpt() {
      * - NPCs
      */
     $cpts['personajes'] = array(
-		'public' 		=> true,
-		'has_archive' 	=> true,
-		'label'  		=> 'Personajes',
-		'menu_icon' 	=> 'dashicons-format-gallery',
-		'menu_position' => 5,
-		'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'public' 		=> true,
+      'has_archive' 	=> true,
+      'label'  		=> 'Personajes',
+      'menu_icon' 	=> 'dashicons-format-gallery',
+      'menu_position' => 5,
+      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
     );
 
     /**
@@ -59,12 +59,12 @@ function dd_register_cpt() {
      * En un RPG se subdividen en los continentes.
      */
     $cpts['mundo'] = array(
-		'public' 		=> true,
-		'has_archive' 	=> true,
-		'label'  		=> 'Mundo',
-		'menu_icon' 	=> 'dashicons-format-gallery',
-		'menu_position' => 5,
-		'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'public' 		=> true,
+      'has_archive' 	=> true,
+      'label'  		=> 'Mundo',
+      'menu_icon' 	=> 'dashicons-format-gallery',
+      'menu_position' => 5,
+      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
     );
     
     /**
@@ -72,12 +72,12 @@ function dd_register_cpt() {
      * el argumento del juego.
      */
     $cpts['historia'] = array(
-		'public' 		=> true,
-		'has_archive' 	=> true,
-		'label'  		=> 'Historia',
-		'menu_icon' 	=> 'dashicons-format-gallery',
-		'menu_position' => 5,
-		'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'public' 		=> true,
+      'has_archive' 	=> true,
+      'label'  		=> 'Historia',
+      'menu_icon' 	=> 'dashicons-format-gallery',
+      'menu_position' => 5,
+      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
     );
 
     /**
@@ -89,28 +89,36 @@ function dd_register_cpt() {
      * - Secundarios
      */
     $cpts['modulos'] = array(
-		'public' 		=> true,
-		'has_archive' 	=> true,
-		'label'  		=> 'Modulos',
-		'menu_icon' 	=> 'dashicons-format-gallery',
-		'menu_position' => 5,
-		'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'public' 		=> true,
+      'has_archive' 	=> true,
+      'label'  		=> 'Modulos',
+      'menu_icon' 	=> 'dashicons-format-gallery',
+      'menu_position' => 5,
+      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
     );
 
     /**
      * Objetos que se pueden usar durante el transcurso del
      * juego.
+     * 
+     * Se pueden subdividir en :
+     * - Items
+     * - Equipamiento ( armas, armaduras, cascos, accesorios )
+     * - Objetos clave
      */
     $cpts['objetos'] = array(
-		'public' 		=> true,
-		'has_archive' 	=> true,
-		'label'  		=> 'Objetos',
-		'menu_icon' 	=> 'dashicons-format-gallery',
-		'menu_position' => 5,
-		'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'public' 		=> true,
+      'has_archive' 	=> true,
+      'label'  		=> 'Objetos',
+      'menu_icon' 	=> 'dashicons-format-gallery',
+      'menu_position' => 5,
+      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
     );
 
-	// mecanicas
-	register_post_type( 'equipo', $args );
+    foreach ( $cpts as $cpt_name => $data ) {
+      register_post_type( $cpt_name, $data );
+    }
+
+    
 }
 add_action( 'init', 'dd_register_cpt' );
