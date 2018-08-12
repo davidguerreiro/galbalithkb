@@ -26,11 +26,11 @@ function dd_register_cpt() {
      *  - De combate
      */
     $cpts['mecanicas'] = array(
-        'public' 		    => true,
-        'label'  		    => 'Equipo',
-        'menu_icon' 	    => 'dashicons-id-alt',
+        'public' 		        => true,
+        'label'  		        => 'Mecánicas',
+        'menu_icon' 	      => 'dashicons-admin-generic',
         'menu_position'     => 5,
-        'supports'		    => array( 'title', 'editor', 'thumbnail' ),
+        'supports'		      => array( 'title', 'editor', 'thumbnail' ),
     );
 
     /**
@@ -44,12 +44,12 @@ function dd_register_cpt() {
      * - NPCs
      */
     $cpts['personajes'] = array(
-      'public' 		=> true,
+      'public' 		    => true,
       'has_archive' 	=> true,
-      'label'  		=> 'Personajes',
-      'menu_icon' 	=> 'dashicons-format-gallery',
+      'label'  	    	=> 'Personajes',
+      'menu_icon' 	  => 'dashicons-universal-access',
       'menu_position' => 5,
-      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'supports'		  => array( 'title', 'editor', 'thumbnail' ),
     );
 
     /**
@@ -59,12 +59,12 @@ function dd_register_cpt() {
      * En un RPG se subdividen en los continentes.
      */
     $cpts['mundo'] = array(
-      'public' 		=> true,
+      'public' 		    => true,
       'has_archive' 	=> true,
-      'label'  		=> 'Mundo',
-      'menu_icon' 	=> 'dashicons-format-gallery',
+      'label'  		    => 'Mundo',
+      'menu_icon' 	  => 'dashicons-admin-site',
       'menu_position' => 5,
-      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'supports'		  => array( 'title', 'editor', 'thumbnail' ),
     );
     
     /**
@@ -72,12 +72,12 @@ function dd_register_cpt() {
      * el argumento del juego.
      */
     $cpts['historia'] = array(
-      'public' 		=> true,
+      'public' 		    => true,
       'has_archive' 	=> true,
-      'label'  		=> 'Historia',
-      'menu_icon' 	=> 'dashicons-format-gallery',
+      'label'  		    => 'Historia',
+      'menu_icon' 	  => 'dashicons-book-alt',
       'menu_position' => 5,
-      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'supports'		  => array( 'title', 'editor', 'thumbnail' ),
     );
 
     /**
@@ -89,12 +89,12 @@ function dd_register_cpt() {
      * - Secundarios
      */
     $cpts['modulos'] = array(
-      'public' 		=> true,
+      'public' 		    => true,
       'has_archive' 	=> true,
-      'label'  		=> 'Modulos',
-      'menu_icon' 	=> 'dashicons-format-gallery',
+      'label'  		    => 'Modulos',
+      'menu_icon' 	  => 'dashicons-media-code',
       'menu_position' => 5,
-      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'supports'		  => array( 'title', 'editor', 'thumbnail' ),
     );
 
     /**
@@ -107,12 +107,12 @@ function dd_register_cpt() {
      * - Objetos clave
      */
     $cpts['objetos'] = array(
-      'public' 		=> true,
+      'public' 		    => true,
       'has_archive' 	=> true,
-      'label'  		=> 'Objetos',
-      'menu_icon' 	=> 'dashicons-format-gallery',
+      'label'  		    => 'Objetos',
+      'menu_icon' 	  => 'dashicons-carrot',
       'menu_position' => 5,
-      'supports'		=> array( 'title', 'editor', 'thumbnail' ),
+      'supports'		  => array( 'title', 'editor', 'thumbnail' ),
     );
 
     foreach ( $cpts as $cpt_name => $data ) {
