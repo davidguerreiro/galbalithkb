@@ -1,0 +1,23 @@
+.footer {
+    padding-top: 5rem;
+
+    &__primary-elements {
+        padding-left: 0 !important;
+        list-style-type: none;
+        text-align: center;
+        li {
+            display: inline-block;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+
+            a {
+                color: #9a3535;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
