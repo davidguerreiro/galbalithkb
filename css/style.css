@@ -1,34 +1,58 @@
-main {
+.main {
   width: 100%;
-  margin: 1.3rem auto 0 auto; }
-  main__cover-image {
+  margin: 0 auto; }
+  .main__cover-image {
     display: block;
     width: 100%;
     height: auto;
     margin: 0 auto;
     max-width: 600px;
     min-width: 260px; }
-  main__notification {
+  .main__notification {
     text-align: center;
     padding: 1.1rem 0;
     font-size: 2rem;
     width: 100%; }
 
-.footer {
-  padding-top: 5rem; }
-  .footer__primary-elements {
-    padding-left: 0 !important;
-    list-style-type: none;
-    text-align: center; }
-    .footer__primary-elements li {
-      display: inline-block;
-      padding-right: 1rem;
-      padding-bottom: 1rem; }
-      .footer__primary-elements li a {
-        color: #9a3535;
-        text-decoration: none; }
-        .footer__primary-elements li a:hover {
-          text-decoration: underline; }
+.login-form {
+  display: block;
+  width: 25rem;
+  margin: 2rem auto;
+  background-color: #ece7e7;
+  padding: 1rem 0; }
+  .login-form__row {
+    padding: 1rem 0 1rem 2rem; }
+  .login-form__text-label, .login-form__text-input {
+    display: block; }
+  .login-form__text-label {
+    padding-bottom: 0.5rem; }
+  .login-form__text-input {
+    border: none;
+    padding: 0.7rem;
+    width: 100%;
+    max-width: 15rem; }
+  .login-form__submit-input {
+    padding: 0.7rem;
+    background-color: #7d1f1f;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.5s ease; }
+    .login-form__submit-input:hover {
+      background-color: #de7575; }
+
+.footer__primary-elements {
+  padding-left: 0 !important;
+  list-style-type: none;
+  text-align: center; }
+  .footer__primary-elements li {
+    display: inline-block;
+    padding-right: 1rem;
+    padding-bottom: 1rem; }
+    .footer__primary-elements li a {
+      color: #9a3535;
+      text-decoration: none; }
+      .footer__primary-elements li a:hover {
+        text-decoration: underline; }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
