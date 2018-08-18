@@ -10,6 +10,6 @@
  */
 
  get_header();
- $x = 1;
+ $x = 2;
 
  get_footer();
