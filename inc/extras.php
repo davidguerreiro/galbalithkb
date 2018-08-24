@@ -153,7 +153,7 @@ add_action( 'init', 'dd_register_cpt' );
  * 
  * @return void
  */
-function create_book_tax() {
+function dd_create_book_tax() {
 
   // tipos de mecanicas.
 	register_taxonomy(
@@ -234,4 +234,51 @@ function create_book_tax() {
 
 }
 
-add_action( 'init', 'create_book_tax' );
+add_action( 'init', 'dd_create_book_tax' );
+
+/**
+ * Custom login form in homepage.
+ * 
+ * @return void
+ */
+function dd_process_homepage_form() {
+  if ( ! isset( $_POST['action'] ) || ! isset( $_POST['nonce'] ) || ! isset( $_POST['user-email'] ) || ! isset( $_POST['user-pass'] )) {
+    return;
+  }
+
+  if ( $_POST['action'] !== 'login' || ! wp_verify_nonce( $_POST['nonce'], 'login' ) ) {
+    return;
+  }
+
+  $status = true;
+  if ( empty( $_POST['user-mail'] ) || strrpos( $_POST['user-mail'], '@' ) === false ){
+    $status = false;
+  }
+  if ( empty( $_POST['user-pass'] ) ) {
+    $status = false;
+  }
+
+  if ( ! $status ) {
+    dd_send_form_notification( 'invalid-data' );
+  }
+
+  $user_email = sanitize_email( $_POST['user-mail'] );
+  $args       = [
+    'user_login'    => $user_email,
+    'user_password' => $_POST['user-pass'],
+    'remember'      => true,
+  ];
+
+  $current_user = wp_signon( $args, false );
+
+  if ( is_wp_error( $user ) ) {
+    dd_send_form_notification( 'no-match' );
+  } else {
+    // redirects the user to member area archive page.
+    $homepage = get_page_by_title( 'Homepage' );
+    wp_safe_redirect( get_permalink( $homepage->ID ) );
+    exit;
+  }
+}
+
+add_action( 'after_setup_theme', 'dd_process_homepage_form' );

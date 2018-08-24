@@ -10,6 +10,7 @@
  */
 
  get_header();
- $x = 2;
+
+ echo "you are now logged in";
 
  get_footer();

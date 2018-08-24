@@ -6,9 +6,9 @@
  */
 
 
- $cover_image = get_template_directory_uri() . '/assets/img/web_cover.png';
- $page_id = get_the_ID();
- $nonce = wp_create_nonce( 'login' );
+ $cover_image   = get_template_directory_uri() . '/assets/img/web_cover.png';
+ $page_id       = get_the_ID();
+ $nonce         = wp_create_nonce( 'login' );
 
  
  get_header();
