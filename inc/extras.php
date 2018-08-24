@@ -282,3 +282,27 @@ function dd_process_homepage_form() {
 }
 
 add_action( 'after_setup_theme', 'dd_process_homepage_form' );
+
+/**
+ * Send notification to custom form
+ * 
+ * @param string $id Notification id
+ * @param string $url Url to be redirected
+ * @return void
+ */
+function dd_send_form_notification( $id, $url = null ) {
+  $url = ( is_null( $url ) ) ? get_home_url() : esc_url( $url );
+
+  switch ( $id ) {
+    case 'invalid-data' :
+      $not = 'One or more fields are empty or your email address is not valid';
+      break;
+    case 'no-match' :
+      $not = 'The user and password provided do not match our records';
+      break;
+  }
+
+  $url = add_query_arg( 'notification', $not, $url );
+  wp_safe_redirect( $url );
+  exit;
+}

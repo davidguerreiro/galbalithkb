@@ -20,6 +20,13 @@
         <input type="hidden" name="page-id" value="<?php echo $page_id; ?>">
         <input type="hidden" name="action" value="login">
         <input type="hidden" name="nonce" value="<?php echo $nonce; ?>">
+        <?php if ( isset( $_GET['notification'] ) ) : ?>
+            <div class="login-form__row">
+                <p class="login-form__nortification">
+                    <?php echo esc_html( $_GET['notification'] ); ?>
+                </p>
+            </div>
+        <?php endif; ?>
         <div class="login-form__row">
             <label for="user-mail" class="login-form__text-label">
                 Email :
