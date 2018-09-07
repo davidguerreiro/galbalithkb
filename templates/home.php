@@ -10,7 +10,11 @@
  */
 
  get_header();
+ 
+ include( locate_template( 'modules/m002-hero.php' ) );
 
- echo "you are now logged in";
+ include( locate_template( 'modules/m003-search-form.php' ) );
+
+ include( locate_template( 'modules/m004-data-list-parent.php' ) );
 
  get_footer();

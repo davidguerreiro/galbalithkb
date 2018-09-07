@@ -18,3 +18,7 @@
    </head>
    <body>
        <main class="main">
+    <?php
+    if ( is_user_logged_in() ) {
+        get_template_part( 'modules/m001', 'header' );
+    }
