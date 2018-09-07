@@ -306,3 +306,14 @@ function dd_send_form_notification( $id, $url = null ) {
   wp_safe_redirect( $url );
   exit;
 }
+
+/**
+ * Register menu
+ * 
+ * @return void
+ */
+function dd_register_menus() {
+  register_nav_menu( 'primary', __( 'Primary Menu', 'dd' ) );
+}
+
+add_action( 'after_setup_theme', 'dd_register_menus' );
