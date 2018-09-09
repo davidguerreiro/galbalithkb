@@ -10,6 +10,10 @@
  $page_id       = get_the_ID();
  $nonce         = wp_create_nonce( 'login' );
 
+ if ( isset( $_GET['error-key'] ) ) {
+     $notification = dd_get_form_notification( $_GET['error-key'] );
+ }
+
  
  get_header();
 
@@ -20,10 +24,10 @@
         <input type="hidden" name="page-id" value="<?php echo $page_id; ?>">
         <input type="hidden" name="action" value="login">
         <input type="hidden" name="nonce" value="<?php echo $nonce; ?>">
-        <?php if ( isset( $_GET['notification'] ) ) : ?>
+        <?php if ( isset( $notification ) && ! empty( $notification) ) : ?>
             <div class="login-form__row">
                 <p class="login-form__nortification">
-                    <?php echo esc_html( $_GET['notification'] ); ?>
+                    <?php echo esc_html( $notification ); ?>
                 </p>
             </div>
         <?php endif; ?>

@@ -40,6 +40,31 @@
     .login-form__submit-input:hover {
       background-color: #de7575; }
 
+.page-header {
+  display: flex;
+  justify-content: space-between; }
+  .page-header__img-wrap img {
+    width: 200px;
+    height: auto;
+    padding: 10px 0 0 10px; }
+
+.menu {
+  margin-top: 48px;
+  padding-right: 35px; }
+  .menu li {
+    display: inline-block; }
+    .menu li a {
+      display: block;
+      text-decoration: none;
+      margin-right: 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+      color: #000000;
+      transition: .5s ease border-bottom;
+      -webkit-transition: .5s ease border-bottom; }
+      .menu li a:hover {
+        border-bottom: 2px solid #a01b1b; }
+
 .footer__primary-elements {
   padding-left: 0 !important;
   list-style-type: none;
@@ -67,6 +92,10 @@ html {
   /* 2 */
   -webkit-text-size-adjust: 100%;
   /* 2 */ }
+
+ul {
+  margin: 0;
+  padding: 0; }
 
 /**
    * Remove default margin.

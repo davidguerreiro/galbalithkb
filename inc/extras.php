@@ -38,6 +38,7 @@ function dd_register_cpt() {
      */
     $cpts['mecanicas'] = array(
         'public' 		        => true,
+        'has_archive'       => true,
         'label'  		        => 'Mecánicas',
         'menu_icon' 	      => 'dashicons-admin-generic',
         'menu_position'     => 5,
@@ -251,7 +252,7 @@ function dd_process_homepage_form() {
   }
 
   $status = true;
-  if ( empty( $_POST['user-mail'] ) || strrpos( $_POST['user-mail'], '@' ) === false ){
+  if ( empty( $_POST['user-email'] ) || strrpos( $_POST['user-email'], '@' ) === false ){
     $status = false;
   }
   if ( empty( $_POST['user-pass'] ) ) {
@@ -259,21 +260,24 @@ function dd_process_homepage_form() {
   }
 
   if ( ! $status ) {
-    dd_send_form_notification( 'invalid-data' );
+    dd_error_redirect( 'invalid-data' );
   }
 
-  $user_email = sanitize_email( $_POST['user-mail'] );
+  $user_email = sanitize_email( $_POST['user-email'] );
   $args       = [
     'user_login'    => $user_email,
     'user_password' => $_POST['user-pass'],
     'remember'      => true,
   ];
 
-  $current_user = wp_signon( $args, false );
+  $current_user = wp_signon( $args, true );
 
-  if ( is_wp_error( $user ) ) {
-    dd_send_form_notification( 'no-match' );
+  if ( is_wp_error( $current_user ) ) {
+    dd_error_redirect( 'no-match' );
   } else {
+    // set current user and cookies
+    wp_set_current_user( $current_user->ID );
+    wp_set_auth_cookie( $current_user->ID );
     // redirects the user to member area archive page.
     $homepage = get_page_by_title( 'Homepage' );
     wp_safe_redirect( get_permalink( $homepage->ID ) );
@@ -281,17 +285,16 @@ function dd_process_homepage_form() {
   }
 }
 
-add_action( 'after_setup_theme', 'dd_process_homepage_form' );
+add_action( 'init', 'dd_process_homepage_form' );
 
 /**
  * Send notification to custom form
  * 
  * @param string $id Notification id
- * @param string $url Url to be redirected
- * @return void
+ * @return string $not
  */
-function dd_send_form_notification( $id, $url = null ) {
-  $url = ( is_null( $url ) ) ? get_home_url() : esc_url( $url );
+function dd_get_form_notification( $id ) {
+  $not = 'An error has occur, please try again later';
 
   switch ( $id ) {
     case 'invalid-data' :
@@ -302,7 +305,19 @@ function dd_send_form_notification( $id, $url = null ) {
       break;
   }
 
-  $url = add_query_arg( 'notification', $not, $url );
+  return $not;
+}
+
+/**
+ * Redirects user when an error ocurrs in the form
+ * 
+ * @param string $key Error key
+ * @param string $url Url to be redirected
+ * @return void
+ */
+function dd_error_redirect( $key, $url = null ) {
+  $url = ( is_null( $url ) ) ? get_home_url() : esc_url( $url );
+  $url = add_query_arg( 'error-key', $key, $url );
   wp_safe_redirect( $url );
   exit;
 }
@@ -317,3 +332,13 @@ function dd_register_menus() {
 }
 
 add_action( 'after_setup_theme', 'dd_register_menus' );
+
+/**
+ * Remove admin login header.
+ *
+ * @return void
+ */
+function remove_admin_login_header() {
+  remove_action('wp_head', '_admin_bar_bump_cb');
+}
+add_action('get_header', 'remove_admin_login_header');

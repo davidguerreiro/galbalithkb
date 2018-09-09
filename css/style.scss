@@ -1,8 +1,12 @@
 @charset 'UTF-8';
 
+// abstracts
+@import "abstracts/variables";
+
 // components
 @import "components/main";
 @import "components/login-form";
+@import "components/page-header";
 
 // layout
 @import "layout/footer";
