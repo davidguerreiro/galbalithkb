@@ -42,7 +42,8 @@
 
 .page-header {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding-bottom: 20px; }
   .page-header__img-wrap img {
     width: 200px;
     height: auto;
@@ -64,6 +65,16 @@
       -webkit-transition: .5s ease border-bottom; }
       .menu li a:hover {
         border-bottom: 2px solid #a01b1b; }
+
+.hero {
+  background-color: #808080;
+  color: white;
+  padding: 25px 0; }
+  .hero__title {
+    text-align: center; }
+  .hero__subtext {
+    text-align: center;
+    padding-bottom: 11px; }
 
 .footer__primary-elements {
   padding-left: 0 !important;

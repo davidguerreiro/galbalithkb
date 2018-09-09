@@ -1,0 +1,14 @@
+.hero {
+    background-color: $grey;
+    color: white;
+    padding: 25px 0;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__subtext {
+        text-align: center;
+        padding-bottom: 11px;
+    }
+}
