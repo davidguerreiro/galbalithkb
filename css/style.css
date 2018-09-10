@@ -1,95 +1,3 @@
-.main {
-  width: 100%;
-  margin: 0 auto; }
-  .main__cover-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    max-width: 600px;
-    min-width: 260px; }
-  .main__notification {
-    text-align: center;
-    padding: 1.1rem 0;
-    font-size: 2rem;
-    width: 100%; }
-
-.login-form {
-  display: block;
-  width: 25rem;
-  margin: 2rem auto;
-  background-color: #ece7e7;
-  padding: 1rem 0; }
-  .login-form__row {
-    padding: 1rem 0 1rem 2rem; }
-  .login-form__text-label, .login-form__text-input {
-    display: block; }
-  .login-form__text-label {
-    padding-bottom: 0.5rem; }
-  .login-form__text-input {
-    border: none;
-    padding: 0.7rem;
-    width: 100%;
-    max-width: 15rem; }
-  .login-form__submit-input {
-    padding: 0.7rem;
-    background-color: #7d1f1f;
-    color: #ffffff;
-    border: none;
-    transition: background-color 0.5s ease; }
-    .login-form__submit-input:hover {
-      background-color: #de7575; }
-
-.page-header {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 20px; }
-  .page-header__img-wrap img {
-    width: 200px;
-    height: auto;
-    padding: 10px 0 0 10px; }
-
-.menu {
-  margin-top: 48px;
-  padding-right: 35px; }
-  .menu li {
-    display: inline-block; }
-    .menu li a {
-      display: block;
-      text-decoration: none;
-      margin-right: 10px;
-      padding-bottom: 5px;
-      border-bottom: 2px solid transparent;
-      color: #000000;
-      transition: .5s ease border-bottom;
-      -webkit-transition: .5s ease border-bottom; }
-      .menu li a:hover {
-        border-bottom: 2px solid #a01b1b; }
-
-.hero {
-  background-color: #808080;
-  color: white;
-  padding: 25px 0; }
-  .hero__title {
-    text-align: center; }
-  .hero__subtext {
-    text-align: center;
-    padding-bottom: 11px; }
-
-.footer__primary-elements {
-  padding-left: 0 !important;
-  list-style-type: none;
-  text-align: center; }
-  .footer__primary-elements li {
-    display: inline-block;
-    padding-right: 1rem;
-    padding-bottom: 1rem; }
-    .footer__primary-elements li a {
-      color: #9a3535;
-      text-decoration: none; }
-      .footer__primary-elements li a:hover {
-        text-decoration: underline; }
-
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -456,3 +364,123 @@ th {
 p {
   margin: 0;
   padding: 0; }
+
+.main {
+  width: 100%;
+  margin: 0 auto; }
+  .main__cover-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    max-width: 600px;
+    min-width: 260px; }
+  .main__notification {
+    text-align: center;
+    padding: 1.1rem 0;
+    font-size: 2rem;
+    width: 100%; }
+
+.login-form {
+  display: block;
+  width: 25rem;
+  margin: 2rem auto;
+  background-color: #ece7e7;
+  padding: 1rem 0; }
+  .login-form__row {
+    padding: 1rem 0 1rem 2rem; }
+  .login-form__text-label, .login-form__text-input {
+    display: block; }
+  .login-form__text-label {
+    padding-bottom: 0.5rem; }
+  .login-form__text-input {
+    border: none;
+    padding: 0.7rem;
+    width: 100%;
+    max-width: 15rem; }
+  .login-form__submit-input {
+    padding: 0.7rem;
+    background-color: #7d1f1f;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.5s ease; }
+    .login-form__submit-input:hover {
+      background-color: #de7575; }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px; }
+  .page-header__img-wrap img {
+    width: 200px;
+    height: auto;
+    padding: 10px 0 0 10px; }
+
+.menu {
+  margin-top: 48px;
+  padding-right: 35px; }
+  .menu li {
+    display: inline-block; }
+    .menu li a {
+      display: block;
+      text-decoration: none;
+      margin-right: 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+      color: #000000;
+      transition: .5s ease border-bottom;
+      -webkit-transition: .5s ease border-bottom; }
+      .menu li a:hover {
+        border-bottom: 2px solid #a01b1b; }
+
+.hero {
+  background-color: #808080;
+  color: white;
+  padding: 25px 0; }
+  .hero__title {
+    text-align: center; }
+  .hero__subtext {
+    text-align: center;
+    padding-bottom: 11px; }
+
+.search-form {
+  margin-top: 15px; }
+  .search-form form {
+    width: 100%;
+    max-width: 270px;
+    margin: 0 0 0 auto; }
+  .search-form__search-field {
+    padding: 3px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    transition: .5s ease border-bottom-color;
+    -webkit-transtion: .5s ease border-bottom-color; }
+    .search-form__search-field:hover, .search-form__search-field:focus {
+      border-bottom-color: #a01b1b; }
+  .search-form__submit-field {
+    margin-left: 10px;
+    color: white;
+    background-color: #a01b1b;
+    padding: 3px 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 3px;
+    transition: .5s ease background-color;
+    -webkit-transtion: .5s background-color; }
+    .search-form__submit-field:hover {
+      background-color: #000000; }
+
+.footer__primary-elements {
+  padding-left: 0 !important;
+  list-style-type: none;
+  text-align: center; }
+  .footer__primary-elements li {
+    display: inline-block;
+    padding-right: 1rem;
+    padding-bottom: 1rem; }
+    .footer__primary-elements li a {
+      color: #9a3535;
+      text-decoration: none; }
+      .footer__primary-elements li a:hover {
+        text-decoration: underline; }

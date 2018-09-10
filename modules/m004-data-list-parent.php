@@ -7,5 +7,19 @@
  * 
  * @package design-document/modules
  */
+ 
+ $args = [
+     'public'   => true,
+     '_builtin' => false,
+ ];
+
+ $post_types = get_post_types( $args );
+
+ // var_dump( $post_types );
+ // die( 'herethere' );
 
 ?>
+
+<section class="data-list">
+    
+</section>

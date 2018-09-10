@@ -12,5 +12,5 @@
 
 <section class="hero">
     <h1 class="hero__title">This is the section title</h1>
-    <p class="hero__subtext">This is some ramdom subtext example</p>
+    <p class="hero__subtext">This is some random subtext example</p>
 </section>

@@ -1,5 +1,8 @@
 @charset 'UTF-8';
 
+// vendors
+@import "vendors/normalize";
+
 // abstracts
 @import "abstracts/variables";
 
@@ -8,9 +11,7 @@
 @import "components/login-form";
 @import "components/page-header";
 @import "components/hero";
+@import "components/search-form";
 
 // layout
 @import "layout/footer";
-
-// vendors
-@import "vendors/normalize";

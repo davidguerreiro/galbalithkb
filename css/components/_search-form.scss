@@ -1,0 +1,38 @@
+.search-form {
+    margin-top: 15px;
+
+    form {
+        width: 100%;
+        max-width: 270px;
+        margin: 0 0 0 auto;
+    }
+
+    &__search-field {
+        padding: 3px;
+        border: none;
+        border-bottom: 1px solid $black;
+        outline: none;
+        transition: .5s ease border-bottom-color;
+        -webkit-transtion: .5s ease border-bottom-color;
+
+        &:hover, &:focus {
+            border-bottom-color: $dark-red;
+        }
+    }
+
+    &__submit-field {
+        margin-left: 10px;
+        color: white;
+        background-color: $dark-red;
+        padding: 3px 10px;
+        font-size: 15px;
+        border: none;
+        border-radius: 3px;
+        transition: .5s ease background-color;
+        -webkit-transtion: .5s background-color;
+
+        &:hover {
+            background-color: $black;
+        }
+    }
+}
