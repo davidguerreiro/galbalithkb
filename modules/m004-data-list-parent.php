@@ -15,11 +15,17 @@
 
  $post_types = get_post_types( $args );
 
- // var_dump( $post_types );
- // die( 'herethere' );
+ foreach ( $post_types as $post_type_name ) {
+     $post_type = get_post_type_object( $post_type_name );
+ }
 
 ?>
 
 <section class="data-list">
-    
+    <?php
+        foreach ( $post_types as $post_type_name ) {
+            $post_type = get_post_type_object( $post_type_name );
+            include( locate_template( 'template-parts/parent-data-list-item.php' ) );
+        }
+    ?>
 </section>
