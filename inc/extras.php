@@ -233,6 +233,17 @@ function dd_create_book_tax() {
 		)
   );
 
+  // periodos - etapas de la historia del juego.
+	register_taxonomy(
+		'periodos',
+		'historia',
+		array(
+			'label' => __( 'Periodo' ),
+			'rewrite' => array( 'slug' => 'periodos' ),
+			'hierarchical' => true,
+		)
+  );
+
 }
 
 add_action( 'init', 'dd_create_book_tax' );
